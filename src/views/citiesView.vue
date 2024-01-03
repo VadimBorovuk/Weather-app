@@ -40,7 +40,7 @@ const openMoreDetail = (id) => {
   router.push({path: `city/${id}`})
 }
 
-onMounted(()=>{
+onMounted(() => {
   inputCity.value = 'Kiev'
   submitWeather()
 })
