@@ -1,4 +1,6 @@
 <template>
+  <h2>{{ detail.name }}</h2>
+
   {{ detail.main.temp_min }}
   {{ detail.main.pressure }}
 
