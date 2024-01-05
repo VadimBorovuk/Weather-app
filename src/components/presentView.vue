@@ -1,16 +1,22 @@
 <template>
-  <div class="weather_app_info" @click="showDetail()">
+  <div class="weather_app_present" @click="showDetail()">
     <p>{{ info.name }}, {{ info.sys.country }}</p>
-    <p>{{ getTemperature(info) }} &#176;</p>
+    <p>{{ getDataTemperature }} &#176;</p>
     <img :src="`${linkIcon}/${info.weather[0].icon}.png`" :alt="info.weather[0].icon">
 
     <p>{{ info.coord.lat }}, {{ info.coord.lon }}</p>
   </div>
-
+  <div>
+<!--    <span>-->
+<!--      {{getTimestamp}}-->
+<!--    </span>-->
+<!--    <p>{{info.timezone}}</p>-->
+  </div>
 </template>
 
 <script setup lang="ts">
-import {defineEmits, defineProps} from 'vue'
+import {computed} from 'vue'
+import {setTimestamp} from './mixins/dateParse.ts'
 
 const props = defineProps<{ info: object, linkIcon: string }>()
 const emit = defineEmits(['openView'])
@@ -19,17 +25,25 @@ const showDetail = () => {
   emit('openView', props.info.id)
 }
 
-const getTemperature = (data) => {
-  const tempLabel = Math.round(data.main.temp)
-  return `${tempLabel}`
-}
+const getDataTemperature = computed(() => {
+  return Math.round(props.info.main.temp)
+})
+
+
+const getTimestamp =  computed(() => {
+
+  // props.info.timezone = 7200
+
+  return setTimestamp(props.info.dt)
+})
+
 </script>
 
 
 <style lang="scss">
 .weather_app {
 
-  &_info {
+  &_present {
     width: 100%;
     margin-top: 20px;
     display: flex;

@@ -9,3 +9,11 @@ export interface FilterCity {
     lang: string,
     units: string
 }
+
+export type CardType = {
+    title: string,
+    code: number,
+    units: string,
+    content: void,
+    icon: string
+}

@@ -2,7 +2,6 @@
   <main>
     <div class="weather">
       <h1 class="weather_title">Weather app</h1>
-      <p class="weather_description">Weather description</p>
       <RouterView/>
     </div>
   </main>
@@ -13,7 +12,7 @@
 
 body {
   font-family: 'Sora', sans-serif;
-  //background: linear-gradient(to right, rgb(144, 109, 182), rgb(83, 180, 146));
+  background: linear-gradient(to right, rgb(144, 109, 182), rgb(83, 180, 146));
 }
 
 main {
