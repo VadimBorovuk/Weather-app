@@ -52,10 +52,10 @@ import iconBack from '../assets/icons/back-arrow.png'
 
 
 import {computed, defineEmits, defineProps, onMounted} from 'vue'
-import {CardType} from "../types";
+// import {CardType} from "../types";
 import {setHourstamp} from "./mixins/dateParse.ts";
 
-const props = defineProps<{ detail: object, linkIcon: string }>()
+const props = defineProps<{ detail: any, linkIcon: string }>()
 const emit = defineEmits(['openTab'])
 
 onMounted(() => {
@@ -63,7 +63,7 @@ onMounted(() => {
 })
 
 const listsDetails = computed(() => {
-  let lists: Array<CardType> = [
+  return [
     {
       title: "Real Feel",
       code: 1,
@@ -107,8 +107,6 @@ const listsDetails = computed(() => {
       icon: iconLocation
     }
   ]
-
-  return lists
 })
 
 const getDataTemperature = (code: number) => {

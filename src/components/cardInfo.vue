@@ -21,10 +21,9 @@ import {defineProps} from 'vue'
 import copyId from "./mixins/copyId";
 import {ElMessage} from "element-plus";
 
-const props = defineProps<{ info: object }>()
+defineProps<{ info: any }>()
 
-
-const copyValue = (content) => {
+const copyValue = (content: any) => {
   copyId(content)
   ElMessage({
     message: 'Copied.',

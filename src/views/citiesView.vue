@@ -19,7 +19,7 @@ import {getDataByCityName} from "../api/main";
 import {useRouter} from "vue-router";
 import {onMounted, ref} from "vue";
 
-import {FilterW} from "../types";
+// import {FilterW} from "../types";
 import PresentView from "../components/presentView.vue";
 
 const router = useRouter()
@@ -31,12 +31,12 @@ const loading: any = ref(false)
 const queryTimeout: any = ref(null)
 const linkIcon = ref(import.meta.env.VITE_API_ICON)
 
-const filters: FilterW = ref({
+const filters = ref({
   lang: 'en',
   units: 'metric'
 })
 
-const openMoreDetail = (id) => {
+const openMoreDetail = (id: any) => {
   router.push({path: `city/${id}`})
 }
 

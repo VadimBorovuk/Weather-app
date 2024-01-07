@@ -12,7 +12,7 @@ import {onMounted, ref} from "vue";
 import {useRoute, useRouter} from "vue-router";
 import {getDataCityById} from "../api/main";
 
-import {FilterCity} from "../types";
+// import {FilterCity} from "../types";
 import ViewDetail from "../components/viewDetail.vue";
 
 import {ElLoading, ElNotification} from "element-plus";
@@ -23,7 +23,7 @@ const router = useRouter()
 const linkIcon = ref(import.meta.env.VITE_API_ICON)
 let cityInfo: any = ref(null)
 
-const filtersCity: FilterCity = ref({
+const filtersCity = ref({
   id: route.params.id,
   lang: 'en',
   units: 'metric'

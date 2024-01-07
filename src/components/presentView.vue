@@ -16,9 +16,9 @@
 
 <script setup lang="ts">
 import {computed} from 'vue'
-import {setTimestamp} from './mixins/dateParse.ts'
+// import {setTimestamp} from './mixins/dateParse.ts'
 
-const props = defineProps<{ info: object, linkIcon: string }>()
+const props = defineProps<{ info: any, linkIcon: string }>()
 const emit = defineEmits(['openView'])
 
 const showDetail = () => {
@@ -30,12 +30,12 @@ const getDataTemperature = computed(() => {
 })
 
 
-const getTimestamp =  computed(() => {
-
-  // props.info.timezone = 7200
-
-  return setTimestamp(props.info.dt)
-})
+// const getTimestamp =  computed(() => {
+//
+//   // props.info.timezone = 7200
+//
+//   return setTimestamp(props.info.dt)
+// })
 
 </script>
 
