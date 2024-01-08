@@ -41,7 +41,7 @@ const openMoreDetail = (id: any) => {
 }
 
 onMounted(() => {
-  inputCity.value = 'Kiev'
+  inputCity.value = ''
   submitWeather()
 })
 
